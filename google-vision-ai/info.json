@@ -1,0 +1,184 @@
+{
+  "name": "google-vision-ai",
+  "label": "Google Vision AI",
+  "version": "1.0.0",
+  "description": "Google Vision AI allows you to Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications. This connector facilitates the automated operations related to detect images, and operations.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Threat Intelligence",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "description": "The service-based URI to which you will connect and perform the automated operations.",
+        "value": "https://vision.googleapis.com"
+      },
+      {
+        "title": "Client ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "description": "Unique Client ID of the Google Vision AI that is used to create an authentication token required to access the Google Vision AI API."
+      },
+      {
+        "title": "Client Secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "description": "Unique Client Secret of the Google Vision AI that is used to create an authentication token required to access the API. For information on how to get the client secret, see https://developers.google.com/identity/protocols/oauth2/web-server."
+      },
+      {
+        "title": "Authorization Code",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "code",
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Visiom AI API section.",
+        "description": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Vision AI API section."
+      },
+      {
+        "title": "Redirect URL",
+        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "redirect_url",
+        "placeholder": "E.g. https://localhost/myapp",
+        "tooltip": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "submit_images",
+      "title": "Submit Images",
+      "description": "Submits images from the FortiSOAR™ Attachment Module to the Google Vision AI server for analyzes.",
+      "category": "investigation",
+      "annotation": "submit_images",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Attachment ID",
+          "name": "value",
+          "type": "text",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "Attachment ID that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, this defaults to the{{vars.attachment_id}} value."
+        },
+        {
+          "title": "Type",
+          "name": "type",
+          "type": "select",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "Type of Google Cloud Vision API feature to be extracted.",
+          "options": [
+            "TYPE_UNSPECIFIED",
+            "FACE_DETECTION",
+            "LANDMARK_DETECTION",
+            "LOGO_DETECTION",
+            "LABEL_DETECTION",
+            "TEXT_DETECTION",
+            "DOCUMENT_TEXT_DETECTION",
+            "SAFE_SEARCH_DETECTION",
+            "IMAGE_PROPERTIES",
+            "CROP_HINTS",
+            "WEB_DETECTION",
+            "PRODUCT_SEARCH",
+            "OBJECT_LOCALIZATION"
+          ]
+        },
+        {
+          "title": "Limit",
+          "name": "maxResults",
+          "type": "integer",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "Maximum number of results of this type. Does not apply to TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, or CROP_HINTS.",
+          "tooltip": "Maximum number of results of this type. Does not apply to TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, or CROP_HINTS."
+        }
+      ],
+      "output_schema": {
+      }
+    },
+    {
+      "operation": "get_locations_operations",
+      "title": "Get Locations Operations",
+      "description": "Retrieves a operations for a particular locations from Google Vision AI based on the Location ID and Operation ID that you have specified.",
+      "category": "investigation",
+      "annotation": "get_locations_operations",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Location ID",
+          "name": "location_id",
+          "type": "text",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "The ID of the location whose associated operations details you want to retrieve from Google Vision AI."
+        },
+        {
+          "title": "Operation ID",
+          "name": "operation_id",
+          "type": "text",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "The ID of the operations whose details you want to retrieve from Google Vision AI."
+        }
+      ],
+      "output_schema": {
+      }
+    },
+    {
+      "operation": "get_operations",
+      "title": "Get Operations",
+      "description": "Retrieves a operations from Google Vision AI based on the Operation ID that you have specified.",
+      "category": "investigation",
+      "annotation": "get_operations",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Operation ID",
+          "name": "operation_id",
+          "type": "text",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "The ID of the operations whose details you want to retrieve from Google Vision AI."
+        }
+      ],
+      "output_schema": {
+      }
+    }
+  ]
+}
