@@ -1,0 +1,340 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Google Vision AI - 1.0.0",
+      "description": null,
+      "visible": true,
+      "image": null,
+      "uuid": "4446e759-7814-47eb-a47a-299f11b8945b",
+      "id": 1372,
+      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "createDate": 1649158418,
+      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "modifyDate": 1649158418,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Locations Operations",
+          "aliasName": null,
+          "tag": "#google-vision-ai",
+          "description": "Retrieves a operations for a particular locations from Google Vision AI based on the Location ID and Operation ID that you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649223923,
+          "collection": "/api/3/workflow_collections/4446e759-7814-47eb-a47a-299f11b8945b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/94958f81-06b5-4be7-aab5-d6d384d40976",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f92620d9-e4cd-445d-9d5f-3b2af6c3358c",
+                "title": "Google Vision AI: Get Locations Operations",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "94958f81-06b5-4be7-aab5-d6d384d40976",
+              "id": 35698
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Locations Operations",
+              "description": null,
+              "arguments": {
+                "name": "Google Vision AI",
+                "config": "",
+                "params": {
+                  "location_id": "1",
+                  "operation_id": "1"
+                },
+                "version": "1.0.0",
+                "connector": "google-vision-ai",
+                "operation": "get_locations_operations",
+                "operationTitle": "Get Locations Operations",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "e5e60b58-6695-4b92-95ea-97c1a2521f02",
+              "id": 35699
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Locations Operations",
+              "targetStep": "/api/3/workflow_steps/e5e60b58-6695-4b92-95ea-97c1a2521f02",
+              "sourceStep": "/api/3/workflow_steps/94958f81-06b5-4be7-aab5-d6d384d40976",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "b44a4308-a64e-4d63-882d-41af67cbb99f"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "814830cd-d1bc-4d67-a278-82c21a29d712",
+          "recordTags": [
+            "google-vision-ai"
+          ],
+          "id": 13040,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1649223880,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649223923,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Operations",
+          "aliasName": null,
+          "tag": "#google-vision-ai",
+          "description": "Retrieves a operations from Google Vision AI based on the Operation ID that you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649223983,
+          "collection": "/api/3/workflow_collections/4446e759-7814-47eb-a47a-299f11b8945b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/3b232485-9104-428a-95f5-9da4353f38b5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "406e2531-d696-49ef-b83a-6d8213728a67",
+                "title": "Google Vision AI: Get Operations",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "3b232485-9104-428a-95f5-9da4353f38b5",
+              "id": 35700
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Operations",
+              "description": null,
+              "arguments": {
+                "name": "Google Vision AI",
+                "config": "",
+                "params": {
+                  "operation_id": "1"
+                },
+                "version": "1.0.0",
+                "connector": "google-vision-ai",
+                "operation": "get_operations",
+                "operationTitle": "Get Operations",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "a497a72a-52ac-4b08-b3f0-d95bd21530ba",
+              "id": 35701
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Operations",
+              "targetStep": "/api/3/workflow_steps/a497a72a-52ac-4b08-b3f0-d95bd21530ba",
+              "sourceStep": "/api/3/workflow_steps/3b232485-9104-428a-95f5-9da4353f38b5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a817a4d0-53af-4487-9d14-83190180079f"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9b8c01d0-5906-4ed0-a5dc-78be75e17b9e",
+          "recordTags": [
+            "google-vision-ai"
+          ],
+          "id": 13041,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1649223948,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649223983,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Submit Images",
+          "aliasName": null,
+          "tag": "#google-vision-ai",
+          "description": "This playbook detonates the Images in Google Vision AI.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649223844,
+          "collection": "/api/3/workflow_collections/4446e759-7814-47eb-a47a-299f11b8945b",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/9c6f80b0-df21-41b8-8d25-60ef2d33dcc0",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Submit Images",
+              "description": null,
+              "arguments": {
+                "name": "Google Vision AI",
+                "config": "",
+                "params": {
+                  "type": "LOGO_DETECTION",
+                  "value": "{{vars.attachment_id}}",
+                  "maxResults": 10
+                },
+                "version": "1.0.0",
+                "connector": "google-vision-ai",
+                "operation": "submit_images",
+                "operationTitle": "Submit Images",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "300",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "3aa5172f-b4d6-498d-bca6-3abce50a0f43",
+              "id": 35221
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Save attachment details",
+              "description": null,
+              "arguments": {
+                "attachment_id": "{{vars.request.data.records[0][\"@id\"]}}"
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "4a9abb67-8564-4475-b5fb-92c974d00086",
+              "id": 35220
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Attachments",
+              "description": null,
+              "arguments": {
+                "route": "9d7786e0-4c59-4586-91a3-b5cfc2269928",
+                "title": "Google Vision AI: Submit Images",
+                "resources": [
+                  "attachments"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "attachments": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "9c6f80b0-df21-41b8-8d25-60ef2d33dcc0",
+              "id": 35219
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Attachments -> Save attachment details",
+              "targetStep": "/api/3/workflow_steps/4a9abb67-8564-4475-b5fb-92c974d00086",
+              "sourceStep": "/api/3/workflow_steps/9c6f80b0-df21-41b8-8d25-60ef2d33dcc0",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "1dc02c63-0545-4c3a-a149-10a8ba7cbbcf"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Save attachment details -> Submit Images",
+              "targetStep": "/api/3/workflow_steps/3aa5172f-b4d6-498d-bca6-3abce50a0f43",
+              "sourceStep": "/api/3/workflow_steps/4a9abb67-8564-4475-b5fb-92c974d00086",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "62b5dca5-5db6-490f-b47d-a130ae4f50e8"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "d2706a5c-91eb-4946-95d2-e39ffc2994d8",
+          "recordTags": [
+            "google-vision-ai"
+          ],
+          "id": 12801,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1649158471,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649223844,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "google-vision-ai"
+  ]
+}
