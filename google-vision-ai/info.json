@@ -9,7 +9,7 @@
   "category": "Threat Intelligence",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/google-vision-ai/263/google-vision-ai-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -47,7 +47,7 @@
         "visible": true,
         "type": "password",
         "name": "code",
-        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Visiom AI API section.",
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Vision AI API section.",
         "description": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Vision AI API section."
       },
       {
@@ -77,7 +77,7 @@
     {
       "operation": "submit_images",
       "title": "Submit Images",
-      "description": "Submits images from the FortiSOAR™ Attachment Module to the Google Vision AI server for analyzes.",
+      "description": "Submits images from the FortiSOAR™ Attachment Module to Google Vision AI for analysis based on the attachment ID, type, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "submit_images",
       "enabled": true,
@@ -89,7 +89,7 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "description": "Attachment ID that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, this defaults to the{{vars.attachment_id}} value."
+          "description": "The ID of the attachment (image) that you want to submit to Google Vision AI for analysis. The Attachment ID is used to access the attachment metadata from the FortiSOAR™ Attachments module. In playbooks, this defaults to the {{vars.attachment_id}} value."
         },
         {
           "title": "Type",
@@ -98,7 +98,7 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "description": "Type of Google Cloud Vision API feature to be extracted.",
+          "description": "Select the type of Google Cloud Vision API feature to be extracted and used for analyzing the submitted image. You can choose from features such as FACE_DETECTION, LABEL_DETECTION, IMAGE_PROPERTIES, etc.",
           "options": [
             "TYPE_UNSPECIFIED",
             "FACE_DETECTION",
@@ -122,8 +122,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "description": "Maximum number of results of this type. Does not apply to TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, or CROP_HINTS.",
-          "tooltip": "Maximum number of results of this type. Does not apply to TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, or CROP_HINTS."
+          "description": "The maximum number of results that should be returned by this operation. Limits are based on the type (feature) you have selected. Note: Limit does not all to the following types: TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, or CROP_HINTS.",
+          "tooltip": "The maximum number of results that should be returned by this operation. Limits are based on the type (feature) you have selected. Note: Limit does not all to the following types: TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, or CROP_HINTS."
         }
       ],
       "output_schema": {
@@ -132,7 +132,7 @@
     {
       "operation": "get_locations_operations",
       "title": "Get Locations Operations",
-      "description": "Retrieves a operations for a particular locations from Google Vision AI based on the Location ID and Operation ID that you have specified.",
+      "description": "Retrieves details for a specific operation associated with the specified location from Google Vision AI based on the location ID and operation ID that you have specified.",
       "category": "investigation",
       "annotation": "get_locations_operations",
       "enabled": true,
@@ -144,7 +144,7 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "description": "The ID of the location whose associated operations details you want to retrieve from Google Vision AI."
+          "description": "The ID of the location whose associated operation details you want to retrieve from Google Vision AI."
         },
         {
           "title": "Operation ID",
@@ -153,7 +153,7 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "description": "The ID of the operations whose details you want to retrieve from Google Vision AI."
+          "description": "The ID of the operation whose details you want to retrieve from Google Vision AI."
         }
       ],
       "output_schema": {
@@ -162,7 +162,7 @@
     {
       "operation": "get_operations",
       "title": "Get Operations",
-      "description": "Retrieves a operations from Google Vision AI based on the Operation ID that you have specified.",
+      "description": "Retrieves details for an operation from Google Vision AI based on the operation ID that you have specified.",
       "category": "investigation",
       "annotation": "get_operations",
       "enabled": true,
@@ -174,7 +174,7 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "description": "The ID of the operations whose details you want to retrieve from Google Vision AI."
+          "description": "The ID of the operation whose details you want to retrieve from Google Vision AI."
         }
       ],
       "output_schema": {
